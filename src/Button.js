@@ -9,11 +9,10 @@ function Button(props) {
     margin: auto;
     width: 200px;
     background-color: blanchedalmond;
-    font-weight: 400;
   `;
   return (
-    <button css={button} onClick={props.click}>
-      {props.children}
+    <button css={button} onClick={props.onClick}>
+      {props.name}
     </button>
   );
 }

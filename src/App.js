@@ -38,21 +38,13 @@ function App() {
 
   const changedTopText = topText
     .replace(/\?/g, '~q')
-    .replace(/%/g, '~p')
     .replace(/\//g, '~s')
-    .replace(/#/g, '~h')
-    .replace(/"/g, "''")
-    .replace(/_/g, '__')
-    .replace(/-/g, '--');
+    .replace(/#/g, '~h');
 
   const changedBottomText = bottomText
     .replace(/\?/g, '~q')
-    .replace(/%/g, '~p')
     .replace(/\//g, '~s')
-    .replace(/#/g, '~h')
-    .replace(/"/g, "''")
-    .replace(/_/g, '__')
-    .replace(/-/g, '--');
+    .replace(/#/g, '~h');
 
   const generateClick = () => {
     setUrl(
@@ -60,6 +52,7 @@ function App() {
     );
   };
 
+  // Create download function with async
   async function downloadClick() {
     const image = await fetch(url);
     const newBlob = await image.blob();
@@ -68,9 +61,7 @@ function App() {
     const link = document.createElement('a');
     link.href = imageUrl;
     link.download = customMeme + '_' + topText + '_' + bottomText;
-    document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
   }
 
   return (
@@ -106,10 +97,20 @@ function App() {
           <p>
             <div>
               <p>
-                <Button click={generateClick}>GENERATE</Button>
+                <Button
+                  name="Generate"
+                  onClick={(event) => generateClick(event)}
+                >
+                  Generate
+                </Button>
               </p>
               <p>
-                <Button click={downloadClick}>Download</Button>
+                <Button
+                  name="Download"
+                  onClick={(event) => downloadClick(event)}
+                >
+                  Download
+                </Button>
               </p>
             </div>
           </p>

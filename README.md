@@ -1,3 +1,7 @@
+# React Meme Generator
+
+Create your own personalized meme simply by picking one of many default memes and adding your own Top-and Bottom-text. To generate your meme just click the 'Generate' button, you can also download it using the 'Download' button.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
