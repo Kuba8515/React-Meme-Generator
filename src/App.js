@@ -12,7 +12,7 @@ function App() {
   const [customMeme, setCustomMeme] = useState('');
   const [memeTemplate, setMemeTemplate] = useState([]);
 
-  // 1. Fetch data from url => setMemeTemplate
+  // Fetch data from url => setMemeTemplate
   useEffect(() => {
     const fetchData = async () => {
       try {
